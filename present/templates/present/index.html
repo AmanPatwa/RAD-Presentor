@@ -1,3 +1,5 @@
+{% load static %}
+
 <!doctype html>
 <html lang="en" class="no-js">
 
@@ -9,7 +11,7 @@
 		type='text/css'>
 
 	<link rel="stylesheet" href="{% static 'css/reset.css' %}"> <!-- CSS reset -->
-	<link rel="stylesheet" href="{% static 'css/stylee.css' %"}> <!-- Resource style -->
+	<link rel="stylesheet" href="{% static 'css/stylee.css' %}"> <!-- Resource style -->
 	<!-- Font Awesome -->
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
 	<!-- Bootstrap core CSS -->
@@ -35,7 +37,7 @@
 
 
 
-	<script src="./js/modernizr.js"></script> <!-- Modernizr -->
+	<script src="{% static 'js/modernizr.js' %}"></script> <!-- Modernizr -->
 
 	<title>Sliding Panels Template | CodyHouse</title>
 </head>
@@ -47,7 +49,8 @@
 	<div class="cd-projects-container">
 		<ul class="cd-projects-previews">
 			<li>
-				<input type="file" class="file" id="attachment" style="display: none;" onchange="fileSelected(this)" />
+				<form action="{% url 'upload' %}" method="POST" enctype="multipart/form-data">
+				<input type="file" class="file" id="attachment"  name='myfile' style="display: none;" />
 				<a href="#0">
 					<div class="cd-project-title">
 						<h2>Presentation 1</h2>
@@ -56,7 +59,7 @@
 					</div>
 				</a>
 			</li>
-
+			</form>
 			<li>
 				<a href="#0">
 					<div class="cd-project-title">
@@ -145,8 +148,8 @@
 											</button>
 										</div>
 									</div>
-									<div id="full-screen-video" style="width:700px;height:500px;"></div>
-									<div id="lower-ui-bar" class="row fixed-bottom mb-1">
+									<div id="full-screen-video" style="width:900px;height:500px;"></div>
+									<!-- <div id="lower-ui-bar" class="row fixed-bottom mb-1">
 										<div id="rtmp-btn-container" class="col ml-3 mb-2">
 											<button id="rtmp-config-btn" type="button"
 												class="btn btn-primary btn-lg row rtmp-btn" data-toggle="modal"
@@ -161,10 +164,10 @@
 										</div>
 										<div id="external-broadcasts-container" class="container col-flex">
 											<div id="rtmp-controlers" class="col">
-												<!-- insert rtmp  controls -->
+												
 											</div>
 										</div>
-									</div>
+									</div> -->
 								</div>
 								<!-- RTMP Config Modal -->
 								<div class="modal fade slideInLeft animated" id="addRtmpConfigModal" tabindex="-1"
@@ -543,7 +546,7 @@
 	<script src="{% static 'js/agora-screen-client.js' %}"></script>
 	<script src="{% static 'js/ui.js' %}"></script>
 	<script src="{% static 'js/AgoraRTCSDK-3.0.0.js' %}"></script>
-
+	<script src="{% static 'new.js' %}"></script>
 
 
 

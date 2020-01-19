@@ -59,7 +59,7 @@ def home(request):
     ''' HOME URL '''
     
     # print(os.getcwd())
-    return render(request, 'present/home.html')
+    return render(request, 'present/index.html')
 
 
 def upload(request):
@@ -84,6 +84,5 @@ def live_presentor(request):
 
     print(glob_file_pdf)
     nlp_keywords = text_extractor_keywords()
-    for i in nlp_keywords:
-        print(i)
-    return redirect('/')
+    print(nlp_keywords)
+    return render(request, 'present/home.html', {'nlp_keywords': nlp_keywords})

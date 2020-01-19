@@ -1,12 +1,8 @@
 import re
-# import textract
 from collections import OrderedDict
 import numpy as np
 import spacy
 from spacy.lang.en.stop_words import STOP_WORDS
-# text = textract.process('converted.pdf')
-# text = str(text)
-# text_list = text.split('\\n\\n\\x0c')
 
 nlp = spacy.load('en_core_web_sm')
 
@@ -90,7 +86,9 @@ class TextRank():
             key = key.replace("0\\","")
             # print(key + ' - ' + str(value) )
             if value > 1.02:
-                k_array.append(key.strip())
+                key = key.strip()
+                key = key.lower()
+                k_array.append(key)
             if i > number:
                 break
         return k_array

@@ -1,0 +1,120 @@
+{% load static %}
+
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Sidebar 04</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="./css/remoteClient.css">
+
+
+    <script src="https://cdn.agora.io/sdk/web/AgoraRTCSDK-2.8.0.js"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
+        integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}" />
+</head>
+
+<body>
+
+    <div class="wrapper d-flex align-items-stretch">
+        <nav id="sidebar">
+            <div class="custom-menu">
+                <!-- <button type="button" id="sidebarCollapse" class="btn btn-primary">
+                    <i class="fa fa-bars"></i>
+                    <span class="sr-only">Toggle Menu</span>
+                </button> -->
+            </div>
+            <h1><a href="index.html" class="logo">Contents
+                </a></h1>
+            <ul class="list-unstyled components mb-5" id="ul" style="margin-bottom: 0;">
+                <li class="active">
+                    <p>grapes</p>
+                </li>
+                <li>
+                    <p>mango</p>
+                </li>
+                <li>
+                    <p>orange</p>
+                </li>
+                <li>
+                    <p>apple</p>
+                </li>
+                <li>
+                    <p>banana</p>
+                </li>
+                <li>
+                    <p>guava</p>
+                </li>
+            </ul>
+
+            <!-- <div class="container">
+                <div class="container-fluid p-0">
+                    <div id="full-screen-video" style="width:240px;height:200px;"></div>
+                    <div id="watch-live-overlay">
+                        <div id="overlay-container">
+                            <div class="col-md text-center">
+                                <button id="watch-live-btn" type="button" class="btn btn-block btn-primary "
+                                    style="height:40px; width:150px;padding:0;margin-left:-40px;">
+                                    <i id="watch-live-icon" class="fas fa-broadcast-tower"></i><span
+                                        style="font-size: 13px;">Watch the Live
+                                        Stream</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div> -->
+
+        </nav>
+
+        <!-- Page Content  -->
+        <div id="content" class="p-4 p-md-5 pt-5">
+            <iframe style="margin-left: 235px;" src="./img/sample.pdf" scrolling="no" frameborder="0" width="700"
+                height="569" allowfullscreen="true" mozallowfullscreen="true" loading="lazy"
+                webkitallowfullscreen="true"></iframe>
+            <br><br>
+            <!-- <a href="#" id="previous"class="previous round">&#8249;</a>
+            <a href="#" id="next" class="next round">&#8250;</a> -->
+            <button id="previous"class="button previous " onclick="dispPrev()">&#8249</button>
+            <button id="next"class="button next " onclick="dispNext()">&#8250</button>
+
+            <!-- <h2 class="mb-4">Sidebar #04</h2> -->
+            <!-- <div class="container-fluid p-0">
+                <div id="full-screen-video"></div>
+                <div id="watch-live-overlay">
+                    <div id="overlay-container">
+                        <div class="col-md text-center">
+                            <button id="watch-live-btn" type="button" class="btn btn-block btn-primary btn-xlg">
+                                <i id="watch-live-icon" class="fas fa-broadcast-tower"></i><span>Watch the Live
+                                    Stream</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div> -->
+            <!-- <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p> -->
+        </div>
+    </div>
+
+    <script src="{% static 'js/jquery.min.js' %}"></script>
+    <script src="{% static 'js/popper.js' %}"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'js/clientmain.js' %}"></script>
+    <script src="{% static 'js/main.js' %}"></script>
+
+    <script src="{% static 'js/agora-audience-client.js' %}"></script>
+    <script src="{% static 'js/AgoraRTCSDK-3.0.0.js'}"></script>
+    <script src="{% static 'js/agora-rtm-sdk-1.2.1.js'%}"></script>
+</body>
+
+</html>

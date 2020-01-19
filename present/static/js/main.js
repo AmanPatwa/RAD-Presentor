@@ -1,3 +1,5 @@
+var pageNo = 0;
+
 jQuery(document).ready(function ($) {
 	//cache DOM elements
 	var projectsContainer = $('.cd-projects-container'),
@@ -24,7 +26,7 @@ jQuery(document).ready(function ($) {
 			navigationTrigger.add(projectsContainer).addClass('project-open');
 			openProject($(this).parent('li'));
 
-		// openAttachment();
+		openAttachment();
 		}
 	});
 
@@ -187,3 +189,22 @@ jQuery(document).ready(function ($) {
 		});
 	};
 })(jQuery);
+
+
+
+
+
+function dispNext(){
+	var li = ""
+	var arr = [['we','will'],['rock','you','now']]
+	var ul = document.querySelector('#ul')
+	for(var i=0;i<arr[pageNo].length;i++){
+		li += `<li class="active">
+                    <p>${arr[pageNo][i]}</p>
+                </li>`
+	}
+
+	ul.innerHTML = li
+
+	
+}

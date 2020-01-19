@@ -1,7 +1,14 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html>
 
 <body>
+    {%  if nlp_keywords %}
+        {% for i in nlp_keywords %}
+            <p> {{ i }}</p><br>
+        {% endfor %} 
+    {% endif %}
     <h1>Show a file-select field:</h1>
     <h3>Show a file-select field which allows only one file to be chosen:</h3>
     <form action="{% url 'upload' %}" method="POST" enctype="multipart/form-data">

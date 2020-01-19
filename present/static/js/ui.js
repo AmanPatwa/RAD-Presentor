@@ -18,6 +18,7 @@ function enableUiControls() {
     $("#exit-btn").click(function(){
       console.log("so sad to see you leave the channel");
       leaveChannel(); 
+      close1();
     });
   
     $("#start-RTMP-broadcast").click(function(){

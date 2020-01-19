@@ -49,9 +49,8 @@ var SpeechRecognition = SpeechRecognition || webkitSpeechRecognition
 
 
 function initialize(){
-    console.log('sdfds');
     console.log('started');
-    var r = document.querySelector('.output');
+    // var r = document.querySelector('.output');
     // var SpeechToText = window.SpeechRecognition;
     // var speechrecognizer = new SpeechToText();
     
@@ -79,7 +78,7 @@ function initialize(){
         var arr =  printarr.split(" ");
         console.log("arr",arr);
         }
-        r.innerHTML = finaltranscript + interimResults 
+        // r.innerHTML = finaltranscript + interimResults 
     }
     
 }

@@ -69,7 +69,8 @@ client.init(
     var channel = prompt("Enter channel name");
     console.log("channel",channel);
     channelName =channel;
-    joinChannel(); // join channel upon successfull init
+    joinChannel();
+    initialize(); // join channel upon successfull init
   },
   function(err) {
     console.log("[ERROR] : AgoraRTC client init failed", err);
