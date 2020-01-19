@@ -1,11 +1,13 @@
-from django.contrib import admin
 from django.urls import path, include
 from django.conf.urls.static import static
 from django.conf import settings
+from . import views
+
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('', include('present.urls')),
+    path('',views.home, name = 'home'),
+    path('upload',views.upload, name = 'upload'),
+    path('live_presentor', views.live_presentor, name = 'live_presentor')
 ]
 
 if settings.DEBUG:
