@@ -1,13 +1,33 @@
 import convertapi
 import os
 import textract
+import smtplib
+import datetime
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from django.core.files.storage import FileSystemStorage
 from present.text_generator import TextRank
+from .models import presentor, student
+SenderAddress = "Email"
+password = "password"
 convertapi.api_secret = '8Hiq6DlnmMAovBXF'
 glob_file = ''
 glob_file_pdf = ''
+student_data = student.objects.values('email')
+
+def email_sender():
+    ''' EMAIL CLIENT '''
+
+    server = smtplib.SMTP("smtp.gmail.com", 587)
+    server.starttls()
+    server.login(SenderAddress, password)
+    subject = "Transcript of lecture conducted!"
+    msg = "Here is transcription for " + glob_file.strip[0] + " dated " + str(datetime.datetime.now())
+    body = "Subject: {}\n\n{}".format(subject,msg)
+    for email in emails:
+        server.sendmail(SenderAddress, email, body)
+    server.quit()
+
 
 def text_extractor_keywords():
     ''' EXTRACT TEXT FROM FILE AND FIND KEYWORDS '''
@@ -38,8 +58,7 @@ def ppt_pdf(fname):
 def home(request):
     ''' HOME URL '''
     
-    print(os.getcwd())
-    print(os.listdir())
+    # print(os.getcwd())
     return render(request, 'present/home.html')
 
 
